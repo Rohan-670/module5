@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS user_management
+  CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+USE user_management;
+
+CREATE TABLE IF NOT EXISTS users (
+  id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  first_name VARCHAR(60) NOT NULL,
+  last_name VARCHAR(60) NOT NULL,
+  email VARCHAR(190) NOT NULL,
+  role VARCHAR(20) NOT NULL,
+  created_at TIMESTAMP(6) NOT NULL,
+  updated_at TIMESTAMP(6) NOT NULL,
+  CONSTRAINT uk_users_email UNIQUE (email)
+);
